@@ -1,0 +1,50 @@
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.content .block {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  color: #424242;
+}
+.block h1 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.block p {
+  font-weight: 100;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.content_description {
+  color: #424242;
+  line-height: 30px;
+  margin-top: 5px;
+  width: 100%;
+  text-align: justify;
+}
+.pictures {
+  margin: 40px 0;
+  display: flex;
+  overflow: auto;
+}
+.picture_place {
+  object-fit: cover;
+  width: 50%;
+  height: 250px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.map {
+  width: 100%;
+}
