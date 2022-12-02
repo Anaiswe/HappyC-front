@@ -41,13 +41,6 @@
 
 /* Hero-Filters & SearchBar */
 
-.type_button {
-  display: flex;
-  flex-direction: column;
-  align-self: auto;
-  position: relative;
-}
-
 .banner {
   background-image: url(../img/pizza.jpeg);
   /* border: solid salmon; */
@@ -66,4 +59,20 @@
   height: auto;
   color: black;
   /* background-color: aliceblue; */
+}
+
+.type_button .active {
+  color: green;
+  background-color: white;
+}
+.type_button .inactive {
+  color: black;
+  background-color: white;
+}
+.type_button {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: auto;
+  position: relative;
 }

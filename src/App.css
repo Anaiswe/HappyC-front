@@ -18,3 +18,14 @@ button {
   border: none;
   cursor: pointer;
 }
+
+/* AllMaps */
+
+.view-container {
+  display: flex;
+}
+
+.left {
+  width: 100%;
+  height: 500px;
+}

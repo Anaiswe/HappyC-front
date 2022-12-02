@@ -6,7 +6,7 @@ const Limit = ({ setLimit }) => {
   };
   return (
     <div className="count">
-      <span>Afficher par : </span>
+      <span>results by : </span>
       <button
         onClick={() => {
           handleLimit(20);

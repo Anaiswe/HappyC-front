@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 import "./App.css";
+import PlacesView from "./pages/PlacesView";
 
 function App() {
   const [setToken] = useState(Cookies.get("token") || null);
@@ -57,6 +58,7 @@ function App() {
             }
           />
           <Route path="/places/:placeId" element={<CardPlace />} />
+          <Route path="/view" element={<PlacesView />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route path="/signup" element={<Signup setUser={setUser} />} />
         </Routes>

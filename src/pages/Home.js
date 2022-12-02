@@ -13,12 +13,12 @@ const Home = ({ name, limit, setLimit, type, setType, handleType }) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [skip, setSkip] = useState(1);
-
+  const url = "http://localhost:3000/";
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3000/?name=${name}&type=${type}&limit=${limit}&skip=${skip}`
+          `${url}?name=${name}&type=${type}&limit=${limit}&skip=${skip}`
         );
         setData(response.data);
         setSkip(response.skip);
@@ -35,7 +35,7 @@ const Home = ({ name, limit, setLimit, type, setType, handleType }) => {
   ) : (
     <div className="home">
       <SearchBar data={data} />
-      <h2>Nos restaurants</h2>
+
       <div className="hero-filters">
         <HeroFilters handleType={handleType} type={type} setType={setType} />
       </div>

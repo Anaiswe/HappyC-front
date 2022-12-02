@@ -8,13 +8,15 @@ import TextField from "@mui/material/TextField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
+//need to fix bug GET /places/:undefined 200 1.744 ms - -
 const SearchBar = ({ data, placeId }) => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const submitSearch = () => {
     const index = data.join((item) => item.placeId === search);
     if (index !== -1) {
-      navigate(`/places/${placeId}`);
+      // navigate(`/places/${placeId}`);
+      navigate("/view");
     } else {
       alert("no results found");
     }

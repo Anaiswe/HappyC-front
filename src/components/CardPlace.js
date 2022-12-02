@@ -38,13 +38,25 @@ const CardPlace = () => {
       </div>
       <div className="content">
         <div className="block">
-          <h1>CONTACT</h1>
+          <h1>Contact</h1>
           <p>{data.phone}</p>
-          <h1>FIND</h1>
+          <h1>Find</h1>
           <p>{data.address}</p>
         </div>
         <p className="content_description">{data.description}</p>
-
+        <p>price</p>
+        <p className="price">{data.price}</p>
+        <p className="website">visit website</p>
+        {data.website && (
+          <a
+            href={data.website}
+            target="_blank"
+            rel="noopener"
+            rel="noreferrer"
+          >
+            Website
+          </a>
+        )}
         <div className="pictures">
           {data.pictures.map((picture) => {
             return (

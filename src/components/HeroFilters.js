@@ -5,6 +5,7 @@ const HeroFilters = ({ handleType, type, setType }) => {
   return (
     <>
       <div className="type_button">
+        <span>Select by type</span>
         <Filters
           handleType={handleType}
           type={type}

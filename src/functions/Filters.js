@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
 const Filters = ({ value, type, setType, name }) => {
-  const [selected, isSelected] = useState(false);
+  const [active, isActive] = useState(false);
 
   const addTypes = (elem) => {
     let newType = [...type];
 
     if (newType.length === 0) {
-      isSelected(true);
+      isActive(true);
       newType.push(elem);
       setType(newType);
     } else if (newType.length >= 1) {
       if (newType.indexOf(elem) === -1) {
-        isSelected(true);
+        isActive(true);
         newType.push(elem);
         setType(newType);
       } else {
-        isSelected(false);
+        isActive(false);
         for (let i = 0; i < newType.length; i++) {
           if (newType.indexOf(elem) !== -1) {
             const index = newType.indexOf(elem);
@@ -30,7 +30,7 @@ const Filters = ({ value, type, setType, name }) => {
   };
   return (
     <button
-      className={selected ? "selected" : "normal"}
+      className={active ? "active" : "inactive"}
       onClick={() => {
         addTypes(name);
       }}
