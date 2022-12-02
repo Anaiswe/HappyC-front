@@ -38,3 +38,32 @@
   flex-direction: column;
   width: 100%;
 }
+
+/* Hero-Filters & SearchBar */
+
+.type_button {
+  display: flex;
+  flex-direction: column;
+  align-self: auto;
+  position: relative;
+}
+
+.banner {
+  background-image: url(../img/pizza.jpeg);
+  /* border: solid salmon; */
+  margin-top: 30px;
+  background-position-y: 30%;
+  background-size: cover;
+  height: 200px;
+  position: relative;
+  width: 100%;
+}
+
+.searchbar {
+  display: flex;
+  /* border: solid saddlebrown; */
+  justify-content: center;
+  height: auto;
+  color: black;
+  /* background-color: aliceblue; */
+}

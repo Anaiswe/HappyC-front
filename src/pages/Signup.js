@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import "../assets/styles/SignLog.css";
+
 import axios from "axios";
+const url = "http://localhost3000";
 
 const Signup = ({ setUser }) => {
   const [email, setEmail] = useState("");
@@ -14,7 +17,7 @@ const Signup = ({ setUser }) => {
   const handleSubmit = async (event) => {
     try {
       event.preventDefault();
-      const response = await axios.post(`http://localhost3000/signup`, {
+      const response = await axios.post(`${url}/signup`, {
         email: email,
         password: password,
         username: username,
@@ -34,15 +37,15 @@ const Signup = ({ setUser }) => {
   };
 
   return (
-    <div className="signup-container">
-      <h2>S'inscrire</h2>
-      <form onSubmit={handleSubmit} className="signup-form">
+    <div className="signlog-container">
+      <h2>Signup</h2>
+      <form onSubmit={handleSubmit} className="signlog-form">
         <input
           value={username}
           onChange={(event) => {
             setUsername(event.target.value);
           }}
-          placeholder="Nom d'utilisateur"
+          placeholder="username"
           type="text"
         />
         <input
@@ -54,18 +57,18 @@ const Signup = ({ setUser }) => {
           placeholder="Email"
           type="email"
         />
-        <span className="signup-login-error-message">{errorMessage}</span>
+        <span className="signlog-error-message">{errorMessage}</span>
         <input
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
-          placeholder="Mot de passe"
+          placeholder="password"
           type="password"
         />
-        <button type="submit">S'inscrire</button>
+        <button type="submit">Signup</button>
       </form>
-      <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
+      <Link to="/login">already user ? Login</Link>
     </div>
   );
 };

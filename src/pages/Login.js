@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
-// import "../assets/styles/login.css";
+import "../assets/styles/SignLog.css";
+
 const url = "http://localhost:3000";
 
 const Login = ({ setUser }) => {
@@ -12,7 +13,7 @@ const Login = ({ setUser }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   const handleSubmit = async (event) => {
     try {
@@ -61,7 +62,7 @@ const Login = ({ setUser }) => {
           <div>is loading...</div>
         ) : (
           <button disabled={isLoading ? true : false} type="submit">
-            Se connecter
+            Login
           </button>
         )}
       </form>

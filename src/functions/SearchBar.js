@@ -8,13 +8,13 @@ import TextField from "@mui/material/TextField";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar = ({ data }) => {
+const SearchBar = ({ data, placeId }) => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const submitSearch = () => {
-    const index = data.findIndex((item) => item.name === search);
+    const index = data.join((item) => item.placeId === search);
     if (index !== -1) {
-      navigate(`/places/${data.placeId}`);
+      navigate(`/places/${placeId}`);
     } else {
       alert("no results found");
     }
@@ -22,32 +22,34 @@ const SearchBar = ({ data }) => {
 
   return (
     <>
-      <h2>Check some places</h2>
-      <form onSubmit={submitSearch} className="searchbar">
-        <Autocomplete
-          className="autocomplete"
-          disablePortal
-          id="combo-box-search"
-          options={data}
-          sx={{ width: 300 }}
-          isOptionEqualToValue={(option, value) => option.name === value.name}
-          onChange={(event, value) => setSearch(value.name)}
-          getOptionLabel={(option) => option.name}
-          renderInput={(params) => (
-            <TextField {...params} label="Search for a place" />
-          )}
-          renderOption={(props, option) => {
-            return (
-              <li {...props} key={option.placeId}>
-                {option.name}
-              </li>
-            );
-          }}
-        />
-        <button type="submit" className="button">
-          <FontAwesomeIcon icon={faSearch} className="button-search" />
-        </button>
-      </form>
+      <div className="banner">
+        <h2>Check some places</h2>
+        <form onSubmit={submitSearch} className="searchbar">
+          <Autocomplete
+            className="autocomplete"
+            disablePortal
+            id="combo-box-search"
+            options={data}
+            sx={{ width: 300 }}
+            isOptionEqualToValue={(option, value) => option.name === value.name}
+            onChange={(event, value) => setSearch(value.name)}
+            getOptionLabel={(option) => option.name}
+            renderInput={(params) => (
+              <TextField {...params} label="Search for a place" />
+            )}
+            renderOption={(props, data) => {
+              return (
+                <li {...props} key={data.placeId}>
+                  {data.name}
+                </li>
+              );
+            }}
+          />
+          <button type="submit" className="button">
+            <FontAwesomeIcon icon={faSearch} className="button-search" />
+          </button>
+        </form>
+      </div>
     </>
   );
 };

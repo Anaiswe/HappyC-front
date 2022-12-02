@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Filters = ({ value, type, setType, name, src }) => {
+const Filters = ({ value, type, setType, name }) => {
   const [selected, isSelected] = useState(false);
 
   const addTypes = (elem) => {

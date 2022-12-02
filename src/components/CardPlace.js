@@ -26,7 +26,7 @@ const CardPlace = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [placeId]);
 
   return loading ? (
     <div>Loading...</div>
@@ -46,8 +46,14 @@ const CardPlace = () => {
         <p className="content_description">{data.description}</p>
 
         <div className="pictures">
-          {data.pictures.map((picture, index) => {
-            return <img className="picture_place" src={picture} />;
+          {data.pictures.map((picture) => {
+            return (
+              <img
+                className="picture_place"
+                src={picture}
+                alt="picture_place"
+              />
+            );
           })}
         </div>
         <div className="map">
